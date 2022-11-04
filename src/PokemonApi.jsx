@@ -15,7 +15,7 @@ export const PokemonApi = () => {
     <>
       <h1>PokemonApi</h1>
       <hr />
-      {isLoading && <span>Loading</span>}
+      {isLoading && <span>Loading</span>} 
       <ul>
         {
           pokemons.map(({name, url})=> (
@@ -31,6 +31,10 @@ export const PokemonApi = () => {
        disabled={isLoading}
        onClick={()=>dispatch( getPokemons(page))}
       >Next page</button>
+      <button
+       disabled={isLoading}
+       onClick={()=>dispatch( getPokemons(page - 2))}
+      >Back</button>
     </>
   );
 };
